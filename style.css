@@ -1,96 +1,4 @@
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background-color: black;
-    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
-}
-
-body, .nav, .menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav {
-    position: relative;
-    top: -400px;
-    background-color: #1DB954;
-    padding: 20px;
-    transition: 0.5s;
-    border-radius: 50px;
-    overflow: hidden;
-    box-shadow: 0 8px 15px rgba(0,0,0,.2);
-}
-
-.menu {
-    margin: 0;
-    padding: 0;
-    width: 0;
-    overflow: hidden;
-    transition: 0.5s;
-}
-
-.nav input:checked ~ .menu {
-    width: 450px;
-}
-
-.menu li {
-    list-style: none;
-    margin: 0 10px;
-}
-
-.menu li a {
-    text-decoration: none;
-    color: #000;
-    text-transform: uppercase;
-    font-weight: 600;
-    transition: 0.5s;
-}
-
-.menu li a:hover {
-    color: #FFF;
-}
-
-.nav input {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    opacity: 0;
-}
-
-.nav span {
-    position: absolute;
-    left: 25px;
-    width: 30px;
-    height: 4px;
-    border-radius: 50px;
-    background-color: #000;
-    pointer-events: none;
-    transition: 0.5s;
-}
-
-.nav input:checked ~ span {
-    background-color: #000;
-}
-
-.nav span:nth-child(2) {
-    transform: translateY(-8px);
-}
-
-.nav input:checked ~ span:nth-child(2) {
-    transform: translateY(0) rotate(-45deg);
-}
-.nav span:nth-child(3) {
-    transform: translateY(8px);
-}
-
-.nav input:checked ~ span:nth-child(3) {
-    transform: translateY(0) rotate(45deg);
-}
-
-/* PHONE LANDING PAGE */
- * {
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -101,26 +9,114 @@ body, .nav, .menu {
             background-color: #121212;
             color: white;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
+            padding: 20px;
             overflow-x: hidden;
         }
         
+        /* Fixed Navigation Styles */
+        .nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #1DB954;
+            padding: 15px 20px;
+            transition: 0.5s;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 8px 15px rgba(0,0,0,.2);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu {
+            margin: 0;
+            padding: 0;
+            width: 0;
+            overflow: hidden;
+            transition: 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav input:checked ~ .menu {
+            width: 250px;
+        }
+
+        .menu li {
+            list-style: none;
+            margin: 0 10px;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: 0.5s;
+            white-space: nowrap;
+        }
+
+        .menu li a:hover {
+            color: #FFF;
+        }
+
+        .nav input {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0;
+        }
+
+        .nav span {
+            position: absolute;
+            left: 23px;
+            width: 30px;
+            height: 4px;
+            border-radius: 50px;
+            background-color: #000;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+
+        .nav input:checked ~ span {
+            background-color: #000;
+        }
+
+        .nav span:nth-child(2) {
+            transform: translateY(-8px);
+        }
+
+        .nav input:checked ~ span:nth-child(2) {
+            transform: translateY(0) rotate(-45deg);
+        }
+
+        .nav span:nth-child(3) {
+            transform: translateY(8px);
+        }
+
+        .nav input:checked ~ span:nth-child(3) {
+            transform: translateY(0) rotate(45deg);
+        }
+
+        /* Main Content */
         .container {
             width: 100%;
             max-width: 1200px;
             text-align: center;
-            padding: 20px;
+            padding: 80px 20px 20px; /* Added top padding for fixed nav */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 80vh;
+            min-height: calc(100vh - 40px);
+            margin: 0 auto;
         }
 
-h1 {
+        h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
             font-weight: 900;
@@ -132,8 +128,8 @@ h1 {
             color: #b3b3b3;
             margin-bottom: 3rem;
             font-family: "Dela Gothic One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+            font-weight: 400;
+            font-style: normal;
         }
         
         .phone-container {
@@ -284,7 +280,7 @@ h1 {
         .progress {
             position: absolute;
             height: 100%;
-            width: 35%;
+            width: 97%;
             background-color: white;
             border-radius: 2px;
         }
@@ -386,7 +382,21 @@ h1 {
             transform: translateY(-2px);
         }
         
+        /* Mobile Responsive Styles */
         @media (max-width: 768px) {
+            .nav {
+                top: 10px;
+                padding: 12px 15px;
+            }
+            
+            .nav input:checked ~ .menu {
+                width: 200px;
+            }
+            
+            .container {
+                padding: 70px 10px 20px;
+            }
+            
             h1 {
                 font-size: 1.75rem;
             }
@@ -420,10 +430,6 @@ h1 {
                 padding: 10px 18px;
                 font-size: 0.9rem;
             }
-            
-            body {
-                padding: 20px 10px;
-            }
         }
         
         @media (min-width: 769px) and (max-width: 1023px) {
@@ -439,9 +445,9 @@ h1 {
         
         @media (min-width: 1024px) {
             .container {
-                min-height: 90vh;
+                min-height: calc(90vh - 40px);
                 justify-content: center;
-                padding: 40px;
+                padding: 100px 40px 40px;
             }
             
             .portfolio-links {
@@ -452,5 +458,79 @@ h1 {
         @media (min-height: 800px) {
             .container {
                 gap: 30px;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 480px) {
+            .nav {
+                top: 5px;
+                padding: 10px 12px;
+            }
+            
+            .nav input:checked ~ .menu {
+                width: 180px;
+            }
+            
+            .container {
+                padding: 65px 5px 15px;
+            }
+            
+            .phone-container {
+                width: 220px;
+                height: 440px;
+            }
+        }
+        
+        .text-white {
+            color: white;
+        }
+
+    .scroll-down {
+            width: 60px;
+            height: 60px;
+            background-color: #000;
+            border: 3px solid #1DB954;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 2rem auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .scroll-down:hover {
+            box-shadow: 0 6px 20px rgba(29, 185, 84, 0.4);
+            border-color: #1ed760;
+        }
+        
+        .scroll-down:active {
+            transform: translateY(1px);
+        }
+        
+        .scroll-down::before {
+            content: '↓';
+            color: #1DB954;
+            font-size: 24px;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+        
+        .scroll-down:hover::before {
+            color: #1ed760;
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .scroll-down {
+                width: 50px;
+                height: 50px;
+                margin: 1.5rem auto;
+            }
+            
+            .scroll-down::before {
+                font-size: 20px;
             }
         }
