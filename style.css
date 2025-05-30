@@ -131,6 +131,13 @@
             font-weight: 400;
             font-style: normal;
         }
+
+        .spotifyfont {
+            font-family: "Dela Gothic One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white; 
+        }
         
         .phone-container {
             position: relative;
@@ -534,3 +541,61 @@
                 font-size: 20px;
             }
         }
+
+/* TIMELINE CSS */
+.timeline {
+    position: relative;
+    max-width: 1200px; 
+    margin: 100px auto;
+}
+
+.tcontainer {
+    padding: 10px 50px; 
+    position: relative;
+    width: 50%;
+}
+
+.text-box {
+    padding: 20px 30px;
+    background: #1DB954;
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px; 
+}
+
+.left-container {
+    left: 0;
+}
+
+.right-container {
+    left: 50%;
+}
+
+.tcontainer img {
+    position: absolute;
+    width: 50px;
+    border-radius: 10%;
+    right: -20px;
+    top: 95px;
+    z-index: 10; 
+}
+
+.right-container img {
+    left: -20px; 
+    top: 120px; 
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background: #1DB954;
+    top: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.space {
+    height: 100px;
+}
