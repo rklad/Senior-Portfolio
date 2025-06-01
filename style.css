@@ -831,7 +831,6 @@ li.skills:nth-child(even)::before {
         }
 
         .track-info {
-            display: flex;
             align-items: center;
             gap: 12px;
         }
