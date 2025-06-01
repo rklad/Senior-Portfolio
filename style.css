@@ -222,7 +222,7 @@
             object-fit: cover;
         }
         
-        .track-info {
+        .phone-info {
             padding: 0 20px;
             margin-bottom: 20px;
             text-align: left;
@@ -831,6 +831,7 @@ li.skills:nth-child(even)::before {
         }
 
         .track-info {
+            display: flex;
             align-items: center;
             gap: 12px;
         }
