@@ -670,21 +670,15 @@ li.skills:nth-child(even)::before {
 }
 
 /* GALLERY CSS */
-* {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
             color: #ffffff;
             min-height: 100vh;
             overflow-x: hidden;
         }
 
-        .container {
+        .projectcontainer {
             max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
