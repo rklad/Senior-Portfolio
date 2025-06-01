@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="top">
     <header>
         <div class="nav">
             <input type="checkbox">
@@ -24,8 +24,8 @@
         <span></span>
         <span></span>
             <div class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Projects</a></li>
+                <li><a href="#top">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
             </div>
         </div>
     </header>
@@ -52,7 +52,9 @@
                     
                     <div class="track-info">
                         <div class="track-title">My Portfolio</div>
-                        <div class="artist-name">Randy Kladerman</div>
+                        <a href="#goto">
+                            <div class="artist-name">Randy Kladerman</div>
+                        </a>
                     </div>
                     
                     <div class="playback-controls">
@@ -111,7 +113,11 @@
         </div>
     </div>
 
+    <div class="row">
+        <h1 class="text-center spotifyfont">My Experience</h1>
+    </div>
     <!-- CSS TIMELINE -->
+
      <div class="timeline">
 
         <div class="tcontainer left-container">
@@ -134,9 +140,26 @@
 
      </div>
 
+     <div class="row  mt-5 pt-5">
+        <h1 class="text-center">My Skills</h1>
+     </div>
+     <div class="wrapper">
+	
+	<ul class="skills">
+		<li class="skills fw-bold">3 years coding with HTML, CSS, and Bootstrap</li>
+		<li class="skills fw-bold">2 years coding with JavaScript</li>
+		<li class="skills fw-bold">1 year coding with Java, jQuery, JSON, and Vue</li>
+		<li class="skills fw-bold">Coding with R programming</li>
+	</ul>
+</div>
+
+<!-- BACK TO TOP BUTTON -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
     <footer>
         <!-- place footer here -->
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
